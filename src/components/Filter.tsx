@@ -1,3 +1,6 @@
+import { useDispatch } from 'react-redux'
+import { sortBooks } from '../redux/actions'
+
 const Filter: React.FC = ({books}) => {
   const dispatch = useDispatch()
 
