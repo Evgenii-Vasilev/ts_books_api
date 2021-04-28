@@ -1,22 +1,23 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchBooks } from '../redux/actions';
+import React from 'react';
 
-const BookList: React.FC = () => {
-  const state = useSelector((state) => state);
-  const dispatch = useDispatch();
-  console.log(state);
-
-  useEffect(() => {
-    dispatch(fetchBooks());
-  }, []);
+const BookList: React.FC = ({books}) => {
 
   return (
-    <ul>
-      {state.books.map((e, i) => (
-        <li key={i}>{e.name}</li>
-      ))}
-    </ul>
+    {books
+      .map((e, i) => (
+        <div className='card' key={i} >
+          <div className="card__img">
+            <img
+              src={`http://covers.openlibrary.org/b/id/${e.cover_i}-S.jpg`}
+              alt='cover'
+            />
+          </div>
+          <div className="card__info">
+            <h3>{e.title}</h3>
+            <h4><span>Author:</span> {e.author_name}</h4>
+            <h5><span>Year:</span> {e.first_publish_year}</h5>
+            </div>
+        </div>
   );
 };
 

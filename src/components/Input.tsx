@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux'
+
+import { fetchBooks } from '../redux/actions'
 
 const Input: React.FC = () => {
   function submitHandler(e: React.SyntheticEvent) {

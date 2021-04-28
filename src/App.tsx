@@ -1,14 +1,14 @@
-import './styles.css';
+import './App.css'
 import React from 'react';
-
 import Input from './components/Input';
-import BookList from './components/BookList';
+import Section from './components/Section';
+
 
 const App: React.FC = () => {
   return (
     <>
       <Input />
-      <BookList />
+      <Section />
     </>
   );
 };
