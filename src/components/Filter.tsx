@@ -1,10 +1,12 @@
+import { ChangeEvent } from 'react'
 import { useDispatch } from 'react-redux'
 import { sortBooks } from '../redux/actions'
+import { BookState } from '../types/book'
 
-const Filter: React.FC = ({books}) => {
+const Filter: React.FC<BookState> = ({ books }) => {
   const dispatch = useDispatch()
 
-  function filter(e) {
+  function filter(e: ChangeEvent<HTMLSelectElement>) {
     if (e.target.value === 'new') {
       books.sort(
         (a, b) =>
@@ -30,7 +32,7 @@ const Filter: React.FC = ({books}) => {
         <option value='old'>Сначала старые</option>
       </select>
     </div>
-  );
-};
+  )
+}
 
-export default Filter;
+export default Filter

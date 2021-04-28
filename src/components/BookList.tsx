@@ -1,24 +1,17 @@
-import React from 'react';
+import { FC } from 'react'
+import { Book } from '../types/book'
+import BookCard from './BookCard'
 
-const BookList: React.FC = ({books}) => {
+
+const BookList: FC<{books: Book[]}> = ({ books }) => {
 
   return (
-    {books
-      .map((e, i) => (
-        <div className='card' key={i} >
-          <div className="card__img">
-            <img
-              src={`http://covers.openlibrary.org/b/id/${e.cover_i}-S.jpg`}
-              alt='cover'
-            />
-          </div>
-          <div className="card__info">
-            <h3>{e.title}</h3>
-            <h4><span>Author:</span> {e.author_name}</h4>
-            <h5><span>Year:</span> {e.first_publish_year}</h5>
-            </div>
-        </div>
-  );
-};
+    <div className='books'>
+      {books.map((e, i) => (
+        <BookCard e={e} key={i}/>
+      ))}
+    </div>
+  )
+}
 
-export default BookList;
+export default BookList

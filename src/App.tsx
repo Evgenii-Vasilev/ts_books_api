@@ -6,10 +6,10 @@ import Section from './components/Section';
 
 const App: React.FC = () => {
   return (
-    <>
+    <div className='App'>
       <Input />
       <Section />
-    </>
+    </div>
   );
 };
 
