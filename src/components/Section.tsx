@@ -27,11 +27,11 @@ const Section: FC = () => {
 
   return (
     <section>
+      <Filter books={currentBooks}/>
       { loading ? 
       <Spinner />
       :
       <>
-      <Filter books={currentBooks}/>
       <BookList books={currentBooks} />
       </>
       }

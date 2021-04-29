@@ -27,10 +27,11 @@ const Filter: React.FC<BookState> = ({ books }) => {
   return (
     <div className='filter'>
       <label htmlFor='year'>Отсортировать по году:</label>
-      <select name='year' id='year' onChange={filter}>
+      <select name='year' onChange={filter}>
         <option value='new'>Сначала новые</option>
         <option value='old'>Сначала старые</option>
       </select>
+      <span className="custom-arrow"></span>
     </div>
   )
 }

@@ -81,16 +81,54 @@ input:focus {
 
 .filter{
   margin-bottom: 10px;
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: 230px 150px;
+  place-items: grid-start;
+}
+
+label{
+  margin-right: 10px;
 }
 
 select{
   cursor: pointer;
-  outline: #ffdb4d;
+  padding: 2.5px 0px 2.5px 10px;
+  border: 1px solid rgb(114, 114, 114);
+  outline: none;
 }
 
+.custom-arrow{
+  position: absolute;
+  height: 100%;
+  width: 23px;
+  display: block;
+  top: 0;
+  right: 0;
+  background-color: #ffdb4d;
+  pointer-events: none;
+  border-bottom: 1px solid rgb(114, 114, 114);
+  border-top: 1px solid rgb(114, 114, 114);
+  border-right: 1px solid rgb(114, 114, 114);
+}
 
-label{
-  margin-right: 10px;
+.custom-arrow::after,
+.custom-arrow::before{
+  --size: 8px;
+
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-arrow::before{
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid rgba(255, 255, 255, 0.7);
 }
 
 .pagination {

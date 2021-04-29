@@ -1,7 +1,7 @@
 import { BookState, BookAction, BookActionTypes } from '../types/book';
 
 const initState: BookState = {
-  books: ['1'],
+  books: [{}],
   loading: false,
   error: null
 };
